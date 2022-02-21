@@ -2,8 +2,8 @@ import { useState, React } from 'react';
 
 const Books = () => {
   const [books] = useState([
-    { id: 1, title: 'hi' },
-    { id: 2, title: 'bye' },
+    { id: 1, title: 'book 1' },
+    { id: 2, title: 'book 2' },
   ]);
 
   return (
