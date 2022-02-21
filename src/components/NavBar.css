@@ -1,0 +1,21 @@
+main {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+ul {
+  display: flex;
+  gap: 1.25rem;
+}
+
+ul > li {
+  list-style: none;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
