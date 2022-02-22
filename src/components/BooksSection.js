@@ -7,12 +7,6 @@ const Books = () => {
   const booksColl = useSelector((state) => state.booksReducer);
   return (
     <>
-      <button
-        type="button"
-        onClick={() => booksColl.map((book) => console.log(book.title))}
-      >
-        log
-      </button>
       <ul>
         {booksColl.map((book) => (
           <RenderBook
