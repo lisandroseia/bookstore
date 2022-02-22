@@ -1,28 +1,27 @@
-import { useState, React } from 'react';
+const ADD_BOOK = 'bookStore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
-const Books = () => {
-  const [books] = useState([
-    { id: 1, title: 'book 1' },
-    { id: 2, title: 'book 2' },
-  ]);
+const initialState = [];
 
-  return (
-    <div>
-      <ul>
-        {books.map((book) => (
-          <div key={book.id}>
-            <li key={book.title}>{book.title}</li>
-            <button key={book.id} type="button">
-              remove
-            </button>
-          </div>
-        ))}
-      </ul>
-      <form>
-        <input type="text" name="bookName" />
-      </form>
-    </div>
-  );
+export const addBook = (payload) => ({
+  type: ADD_BOOK,
+  payload,
+});
+
+export const removeBook = (id) => ({
+  type: REMOVE_BOOK,
+  id,
+});
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_BOOK:
+      return [...state, action.payload];
+    case REMOVE_BOOK:
+      return state.filter((book) => book.id !== action.id);
+    default:
+      return state;
+  }
 };
 
-export default Books;
+export default reducer;
