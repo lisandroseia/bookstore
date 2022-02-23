@@ -14,7 +14,7 @@ const AddBook = () => {
       title,
       author,
     };
-    if (title !== '' && author !== null) {
+    if (title !== '' && author !== '') {
       dispatch(addBook(newBook));
       setTitle('');
       setAuthor('');
@@ -22,13 +22,19 @@ const AddBook = () => {
   };
 
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        submitBook(title, author);
+      }}
+    >
       <input
         onChange={({ target }) => {
           setTitle(target.value);
         }}
         type="text"
         placeholder="title"
+        value={title}
         required
       />
       <input
@@ -37,17 +43,10 @@ const AddBook = () => {
         }}
         type="text"
         placeholder="author"
+        value={author}
         required
       />
-      <button
-        type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          submitBook(title, author);
-        }}
-      >
-        submit
-      </button>
+      <button type="submit">submit</button>
     </form>
   );
 };
