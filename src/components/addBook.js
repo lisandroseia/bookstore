@@ -1,23 +1,25 @@
 import { React, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBookToApi } from '../redux/books/books';
+
+const categories = ['select category', 'science', 'biography', 'action', 'romance'];
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
-  const submitBook = (title, author) => {
+  const submitBook = (title, category) => {
     const newBook = {
       id: uuidv4(),
       title,
-      author,
+      category,
     };
-    if (title !== '' && author !== '') {
-      dispatch(addBook(newBook));
+    if (title !== '' && category !== 'select category' && category !== '') {
+      dispatch(addBookToApi(newBook));
       setTitle('');
-      setAuthor('');
+      setCategory('select category');
     }
   };
 
@@ -25,7 +27,7 @@ const AddBook = () => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        submitBook(title, author);
+        submitBook(title, category);
       }}
     >
       <input
@@ -37,15 +39,18 @@ const AddBook = () => {
         value={title}
         required
       />
-      <input
+      <select
+        value={category}
         onChange={({ target }) => {
-          setAuthor(target.value);
+          setCategory(target.value);
         }}
-        type="text"
-        placeholder="author"
-        value={author}
-        required
-      />
+      >
+        {categories.map((item) => (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        ))}
+      </select>
       <button type="submit">submit</button>
     </form>
   );

@@ -5,6 +5,7 @@ import RenderBook from './renderBook';
 
 const Books = () => {
   const booksColl = useSelector((state) => state.booksReducer);
+
   return (
     <>
       <ul>
@@ -12,7 +13,7 @@ const Books = () => {
           <RenderBook
             key={book.id}
             title={book.title}
-            author={book.author}
+            category={book.category}
             id={book.id}
           />
         ))}
