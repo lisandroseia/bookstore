@@ -2,13 +2,14 @@ import { React } from 'react';
 import { useSelector } from 'react-redux';
 import AddBook from './addBook';
 import RenderBook from './renderBook';
+import './booksSection.css';
 
 const Books = () => {
   const booksColl = useSelector((state) => state.booksReducer);
 
   return (
     <>
-      <ul>
+      <ul className="books-container">
         {booksColl.map((book) => (
           <RenderBook
             key={book.id}

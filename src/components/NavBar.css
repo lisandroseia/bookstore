@@ -1,8 +1,16 @@
-main {
+.main {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
   margin: auto;
+  align-items: center;
+  height: 50px;
+}
+
+main {
+  background-color: #fff;
+  height: 60px;
+  margin-bottom: 50px;
 }
 
 ul {
@@ -15,7 +23,27 @@ ul > li {
 }
 
 .link {
-  color: #000;
+  color: #121212;
   text-decoration: none;
   font-size: 20px;
+  font-weight: bold;
+}
+
+.cat {
+  font-weight: lighter;
+}
+
+.nav-container {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #0290ff;
+}
+
+.user {
+  color: #0290ff;
 }

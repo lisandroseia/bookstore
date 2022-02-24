@@ -1,0 +1,135 @@
+form {
+  width: 80%;
+  margin: auto;
+  padding: 20px 0 0 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+h2 {
+  color: #888;
+  font-weight: bolder;
+  margin: 10px 0;
+}
+
+input {
+  width: 45%;
+  height: 20px;
+  padding: 5px;
+  outline: none;
+  margin-right: 20px;
+}
+
+input::placeholder {
+  color: #c4c4c4;
+  align-items: center;
+  align-content: center;
+  font-size: 90%;
+}
+
+select {
+  padding: 7px 30px 7px 5px;
+  color: #c4c4c4;
+  margin-right: 15px;
+}
+
+.submit-btn {
+  color: #fff;
+  background-color: #0290ff;
+  border: none;
+  font-weight: bolder;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 7px 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.li-book {
+  background-color: #fff;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 80px;
+}
+
+.category {
+  color: #121212;
+  font-weight: bold;
+  opacity: 0.2;
+}
+
+.book-title {
+  color: #121212;
+  margin: 10px 0;
+}
+
+.author {
+  color: #4386bf;
+  font-weight: 500;
+}
+
+.btn-book {
+  border: none;
+  background-color: #fff;
+  color: #4386bf;
+}
+
+.midle {
+  border-left: 1px solid #4386bf;
+  border-right: 1px solid #4386bf;
+  padding: 0 10px;
+  margin: 0 15px;
+}
+
+.book-options {
+  margin-top: 10px;
+}
+
+.current-chapter {
+  color: #121212;
+  opacity: 50%;
+}
+
+.chapter {
+  color: #121212;
+  margin: 25px 0;
+}
+
+.update-btn {
+  background-color: #0290ff;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.circle {
+  width: 55px;
+  aspect-ratio: 1 / 1;
+  margin-right: 15px;
+}
+
+.book-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentage {
+  color: #121212;
+  margin-bottom: 5px;
+}
+
+.completed {
+  color: #121212;
+  opacity: 50%;
+}
