@@ -3,7 +3,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBookToApi } from '../redux/books/books';
 
-const categories = ['select category', 'science', 'biography', 'action', 'romance'];
+const categories = [
+  'select category',
+  'science',
+  'biography',
+  'action',
+  'romance',
+];
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
@@ -30,16 +36,18 @@ const AddBook = () => {
         submitBook(title, category);
       }}
     >
+      <h2>Add new book</h2>
       <input
         onChange={({ target }) => {
           setTitle(target.value);
         }}
         type="text"
-        placeholder="title"
+        placeholder="Book title"
         value={title}
         required
       />
       <select
+        className="sel-css"
         value={category}
         onChange={({ target }) => {
           setCategory(target.value);
@@ -51,7 +59,9 @@ const AddBook = () => {
           </option>
         ))}
       </select>
-      <button type="submit">submit</button>
+      <button className="submit-btn" type="submit">
+        Add book
+      </button>
     </form>
   );
 };
