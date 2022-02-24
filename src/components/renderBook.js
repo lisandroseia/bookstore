@@ -39,7 +39,7 @@ const RenderBook = ({ title, category, id }) => {
         <div className="circle">
           <CircularProgressbar value={1} text="" />
         </div>
-        <div>
+        <div className="percent-wrap">
           <p className="percentage">1%</p>
           <p className="completed">completed</p>
         </div>

@@ -2,7 +2,6 @@ form {
   width: 80%;
   margin: auto auto 100px auto;
   padding: 20px 0 0 0;
-  border-top: 1px solid #e8e8e8;
 }
 
 h2 {
@@ -132,4 +131,20 @@ button:hover {
 .completed {
   color: #121212;
   opacity: 50%;
+}
+
+.separator {
+  width: 87%;
+  margin: 50px auto;
+  border: 1px solid #e8e8e8;
+  background-color: #e8e8e8;
+}
+
+.percent-wrap {
+  border-right: 1px solid #e8e8e8;
+  padding-right: 60px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

@@ -19,6 +19,7 @@ const Books = () => {
           />
         ))}
       </ul>
+      <hr className="separator" />
       <AddBook />
     </>
   );
