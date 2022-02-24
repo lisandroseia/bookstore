@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBookToApi } from '../redux/books/books';
 
+const categories = ['select category', 'science', 'biography', 'action', 'romance'];
+
 const AddBook = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
@@ -14,10 +16,10 @@ const AddBook = () => {
       title,
       category,
     };
-    if (title !== '' && category !== '') {
+    if (title !== '' && category !== 'select category' && category !== '') {
       dispatch(addBookToApi(newBook));
       setTitle('');
-      setCategory('');
+      setCategory('select category');
     }
   };
 
@@ -37,15 +39,18 @@ const AddBook = () => {
         value={title}
         required
       />
-      <input
+      <select
+        value={category}
         onChange={({ target }) => {
           setCategory(target.value);
         }}
-        type="text"
-        placeholder="category"
-        value={category}
-        required
-      />
+      >
+        {categories.map((item) => (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        ))}
+      </select>
       <button type="submit">submit</button>
     </form>
   );
